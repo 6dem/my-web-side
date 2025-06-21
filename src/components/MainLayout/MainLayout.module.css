@@ -1,4 +1,5 @@
 .mainLayout {
+    margin: 0 auto;
     height: 100dvh;
     width: min(1000px, 90dvw);
     display: flex;

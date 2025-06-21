@@ -1,16 +1,38 @@
+import { FolderGit2, Mail, SquareUserRound, type LucideIcon } from "lucide-react"
 import { useEffect, useState, type JSX } from "react"
 import { Emerald } from "../Emerald"
 import cls from './Header.module.css'
 
-const navList: string[] = ["resume", "portfolio", "contacts"]
+interface INavList {
+    id: string;
+    label: string;
+    icon: LucideIcon;
+}
+
+const navList: INavList[] = [
+  { id: "resume", label: "Resume", icon: SquareUserRound },
+  { id: "portfolio", label: "Portfolio", icon: FolderGit2 },
+  { id: "contacts", label: "Contacts", icon: Mail },
+];
 
 export function Header(): JSX.Element {
 
     const [active, setActive] = useState(0)
     const [hover, setHover] = useState<number | null>(null)
     const [isVisible, setIsVisible] = useState(false)
+    const [itemWidth, setItemWidth] = useState(100)
 
-    const itemWidth = 100
+    useEffect(() => {
+        const updateWidth = () => {
+            const width = window.innerWidth
+            setItemWidth(width < 750 ? 50 : 100)
+        }
+
+        updateWidth()
+        window.addEventListener("resize", updateWidth)
+
+        return window.removeEventListener("resize", updateWidth)
+    }, [])
 
     const getOffset = (): number => {
         if (hover === null || hover === active) return active * itemWidth
@@ -34,7 +56,7 @@ export function Header(): JSX.Element {
         <h1 className={`${cls.title} ${cls.typing}`}>My Web Side</h1>
         <nav className={cls.navMenu}>
             <ul className={cls.navList}>
-                {navList.map((id, i) => (
+                {navList.map(({id, label, icon: Icon}, i) => (
                     <li key={id}>
                         <a href={`#${id}`}
                         className={`${cls.navLink} ${active === i ? cls.active : ""}`}
@@ -42,7 +64,8 @@ export function Header(): JSX.Element {
                         onMouseLeave={() => setHover(null)}
                         onClick={() => setActive(i)}
                         >
-                            {id.charAt(0).toUpperCase() + id.slice(1)}
+                            <span className={cls.iconOnly}><Icon size={20} /></span>
+                            <span className={cls.textOnly}>{label}</span>
                         </a>
                     </li>
                 ))}

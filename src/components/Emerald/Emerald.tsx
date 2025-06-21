@@ -1,4 +1,4 @@
-import { useEffect, useRef, type JSX } from "react"
+import { useEffect, useRef, useState, type JSX } from "react"
 import { useLoader } from "../../context/loader"
 import cls from './Emerald.module.css'
 
@@ -8,16 +8,19 @@ interface EmeraldProps {
 
 export function Emerald({size = 100}: EmeraldProps): JSX.Element {
     const { isAnimating } = useLoader()
+    const [isHovered, setIsHovered] = useState(false)
 
     const loaderRef = useRef<HTMLDivElement>(null)
     const wrapperRef = useRef<HTMLDivElement>(null)
+
+    const active = isAnimating || isHovered
 
     useEffect(() => {
         const loader = loaderRef.current
         const wrapper = wrapperRef.current
 
         if(loader && wrapper) {
-            if (isAnimating) {
+            if (active) {
                 loader.classList.add(cls.tilt)
                 wrapper.classList.add(cls.spin)
             } else {
@@ -25,10 +28,16 @@ export function Emerald({size = 100}: EmeraldProps): JSX.Element {
                 wrapper.classList.remove(cls.spin)
             }
         }
-    }, [isAnimating])
+    }, [active])
 
     return (
-        <div ref={loaderRef} className={cls.pyramidLoader} style={{width: size, height: size}}>
+        <div 
+            ref={loaderRef} 
+            className={cls.pyramidLoader} 
+            style={{width: size, height: size}}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
         <div ref={wrapperRef} className={cls.wrapper}>
             <span className={`${cls.side} ${cls.side1}`} />
             <span className={`${cls.side} ${cls.side2}`} />
