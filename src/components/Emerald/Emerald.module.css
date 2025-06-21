@@ -1,9 +1,11 @@
 .pyramidLoader {
   position: relative;
-  width: 100px;
-  height: 100px;
   display: block;
   transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.tilt {
   transform: rotateX(-20deg);
 }
 
@@ -12,6 +14,9 @@
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
+}
+
+.spin {
   animation: spin 1.5s ease-in-out infinite;
 }
 
@@ -55,7 +60,7 @@
   transform: rotateX(-45deg);
 }
 
-.sideBottom{
+.sideBottom {
   top: 148%;
   background-image: url('/emerald-bottom-6dem.svg');
   background-size: 100% 140%;

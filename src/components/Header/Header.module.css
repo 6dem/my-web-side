@@ -1,0 +1,104 @@
+.header {
+    position: sticky;
+    width: 100%;
+    height: 70px;
+    background-color: var(--dark-color);
+    color: var(--light-accent-color);
+    padding: 0 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 8px 0 var(--dark-color);
+    border-radius: 16px;
+}
+
+.title {
+    color: transparent
+}
+
+.typing {
+    position: relative;
+    display: inline-block;
+}
+
+.typing::before {
+    content: "My Website";
+    color: var(--light-accent-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid var(--dark-accent-color);
+    width: 0;
+    animation:
+        typing-first 3s steps(10) forwards,
+        deleting 1.2s steps(4) forwards 3s,
+        typing-second 1.5s steps(5) forwards 4.3s,
+        blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing-first {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 10ch;
+    }
+}
+
+@keyframes deleting {
+    from {
+        width: 10ch;
+    }
+
+    to {
+        width: 6ch;
+    }
+}
+
+
+@keyframes typing-second {
+    from {
+        width: 6ch;
+        content: "My Web Side";
+    }
+
+    to {
+        width: 11ch;
+        content: "My Web Side"
+    }
+
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--dark-accent-color);
+    }
+}
+
+.navMenu {
+    margin-left: auto;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.navLink {
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+}

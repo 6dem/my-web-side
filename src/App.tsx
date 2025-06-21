@@ -1,16 +1,19 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import './App.css'
 import { MainLayout } from "./components/MainLayout"
+import { LoaderProvider } from "./context/loader"
 
 function App() {
 
   return (
     <>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<MainLayout />}></Route>
-          </Routes>
-        </BrowserRouter>
+        <LoaderProvider>
+            <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<MainLayout />}></Route>
+            </Routes>
+            </BrowserRouter>
+        </LoaderProvider>
     </>
   )
 }
