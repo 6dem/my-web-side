@@ -8,7 +8,7 @@ export function MainLayout(): JSX.Element {
             <Header />
             <div className={cls.mainWrapper}>
                 <main className={cls.main}>
-                    Main
+                    {/* Main */}
                     {/* <Hero></Hero> */}
                     {/* <ProjectsCarousel></ProjectsCarousel> */}
                     {/* <Contacts></Contacts> */}

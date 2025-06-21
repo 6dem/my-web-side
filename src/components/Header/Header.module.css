@@ -86,7 +86,9 @@
 }
 
 .navMenu {
+    position: relative;
     margin-left: auto;
+    width: fit-content;
 }
 
 .navList {
@@ -94,11 +96,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
 }
 
 .navLink {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    padding: 12px 0;
+    position: relative;
     color: var(--text-color);
     font-weight: 500;
     text-decoration: none;
+    transition: color 0.3 ease;
+
+    &:hover {
+        color: var(--light-accent-color)
+    }
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: var(--light-accent-color);
+    transform: translateX(0);
+    transform-origin: center;
+    transition:
+        transform 0.3s ease,
+        scale 0.3s ease;
 }
