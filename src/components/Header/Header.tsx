@@ -70,7 +70,7 @@ export function Header(): JSX.Element {
                         onMouseLeave={() => setHover(null)}
                         onClick={() => setActive(i)}
                         >
-                            <span className={cls.iconOnly}><Icon size={20} /></span>
+                            <span className={cls.iconOnly} title={label}><Icon size={20} /></span>
                             <span className={cls.textOnly}>{label}</span>
                         </a>
                     </li>
