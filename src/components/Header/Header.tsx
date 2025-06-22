@@ -1,5 +1,6 @@
 import { FolderGit2, Mail, SquareUserRound, type LucideIcon } from "lucide-react"
-import { useEffect, useState, type JSX } from "react"
+import { useEffect, useRef, useState, type JSX } from "react"
+import { useLoader } from "../../context/loader"
 import { Emerald } from "../Emerald"
 import cls from './Header.module.css'
 
@@ -21,6 +22,8 @@ export function Header(): JSX.Element {
     const [hover, setHover] = useState<number | null>(null)
     const [isVisible, setIsVisible] = useState(false)
     const [itemWidth, setItemWidth] = useState(100)
+    const {start, stop} = useLoader()
+    const timeoutRef = useRef<number | undefined>(undefined)
 
     useEffect(() => {
         const updateWidth = () => {
@@ -56,6 +59,19 @@ export function Header(): JSX.Element {
         return () => clearTimeout(timer)
     }, [])
 
+    const onLinkMouseDown = (): void => {
+        start()
+
+        if(timeoutRef !== undefined){
+            clearTimeout(timeoutRef.current)
+        }
+
+        timeoutRef.current = window.setTimeout(() => {
+            stop()
+            timeoutRef.current = undefined
+        }, 1500)
+
+    }
 
     return <header className={cls.header}>
         <Emerald size={35}/>
@@ -68,7 +84,10 @@ export function Header(): JSX.Element {
                         className={`${cls.navLink} ${active === i ? cls.active : ""}`}
                         onMouseEnter={() => setHover(i)}
                         onMouseLeave={() => setHover(null)}
-                        onClick={() => setActive(i)}
+                        onClick={() => {
+                            setActive(i)
+                            onLinkMouseDown()
+                        }}
                         >
                             <span className={cls.iconOnly} title={label}><Icon size={20} /></span>
                             <span className={cls.textOnly}>{label}</span>
