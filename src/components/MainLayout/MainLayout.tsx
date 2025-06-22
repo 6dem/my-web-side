@@ -1,4 +1,5 @@
 import type { JSX } from "react"
+import { Footer } from "../Footer"
 import { Header } from "../Header"
 import cls from "./MainLayout.module.css"
 
@@ -14,7 +15,7 @@ export function MainLayout(): JSX.Element {
                     {/* <Contacts></Contacts> */}
                 </main>
 
-                <footer className={cls.footer}>Footer</footer>
+                <Footer />
             </div>
         </div>
     </>

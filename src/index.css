@@ -26,6 +26,16 @@ body {
     min-height: 100dvh;
 }
 
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+        color: var(--light-accent-color)
+    }
+}
+
 h1 {
     font-weight: 800;
 }
