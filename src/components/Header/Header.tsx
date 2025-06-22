@@ -39,8 +39,14 @@ export function Header(): JSX.Element {
     
         const delta: number = hover - active
         const direction: number = Math.sign(delta)
-        const magnitude: number = Math.min(Math.abs(delta), 2)
-        const partialOffset: number = direction * magnitude * itemWidth * 0.1
+        const steps: number = Math.abs(delta)
+
+        let offsetFactor = 0
+        for(let i = 1; i <= steps; i++) {
+            offsetFactor += 1 / (2**i)
+        }
+
+        const partialOffset: number = direction * itemWidth * offsetFactor * 0.1
 
         return active * itemWidth + partialOffset
     }
