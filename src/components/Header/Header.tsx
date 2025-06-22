@@ -31,7 +31,7 @@ export function Header(): JSX.Element {
         updateWidth()
         window.addEventListener("resize", updateWidth)
 
-        return window.removeEventListener("resize", updateWidth)
+        return () => window.removeEventListener("resize", updateWidth)
     }, [])
 
     const getOffset = (): number => {
