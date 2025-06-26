@@ -8,18 +8,31 @@
     position: relative;
 }
 
-.mainWrapper {
-    height: 100%;
+.headerBlur {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 20px;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    pointer-events: none;
+}
+
+.mainWrapper {
+    width: 100%;
+    margin-top: 90px;
+    padding-top: 20px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
     gap: 20px;
-    overflow-y: auto;
 }
 
 .main {
     padding: 0 20px;
+    min-height: 75dvh;
 }

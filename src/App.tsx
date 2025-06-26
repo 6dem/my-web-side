@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { MainLayout } from "./components/MainLayout"
 import { LoaderProvider } from "./context/loader"
+import { MainLayout } from "./layouts/MainLayout"
+import { HomePage } from "./pages/HomePage"
 
 function App() {
 
@@ -9,7 +10,9 @@ function App() {
         <LoaderProvider>
             <BrowserRouter>
             <Routes>
-                <Route path="/" element={<MainLayout />}></Route>
+                <Route element={<MainLayout />}>
+                  <Route path="/" element={<HomePage />} />
+                </Route>
             </Routes>
             </BrowserRouter>
         </LoaderProvider>

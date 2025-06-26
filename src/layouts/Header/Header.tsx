@@ -1,7 +1,7 @@
+import { Emerald } from "@/components/Emerald"
+import { useLoader } from "@/context/loader"
 import { FolderGit2, Mail, SquareUserRound, type LucideIcon } from "lucide-react"
 import { useEffect, useRef, useState, type JSX } from "react"
-import { useLoader } from "../../context/loader"
-import { Emerald } from "../Emerald"
 import cls from './Header.module.css'
 
 interface INavList {
