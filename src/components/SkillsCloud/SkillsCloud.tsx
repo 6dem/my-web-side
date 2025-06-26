@@ -21,7 +21,7 @@ export const SkillsCloud = ({ skills }: { skills: string[] }) => {
               gridRowEnd: `span ${rowSpan}`,
             }}
           >
-            {skill}
+            <span className={cls.inner}>{skill}</span>
           </li>
         ))}
       </ul>
