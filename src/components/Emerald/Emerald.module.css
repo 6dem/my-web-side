@@ -37,7 +37,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
   transform-origin: center top;
   background-image: url('/emerald-top-6dem.svg');
   background-repeat: no-repeat;
@@ -63,7 +62,7 @@
 }
 
 .sideBottom {
-  top: 148%;
+  top: 98%;
   background-image: url('/emerald-bottom-6dem.svg');
   background-size: 100% 140%;
 }

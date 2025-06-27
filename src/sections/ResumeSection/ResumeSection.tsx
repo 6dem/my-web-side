@@ -11,7 +11,7 @@ const location: string = "Simferopol, Russia"
 export function ResumeSection(): JSX.Element {
 
     return (
-        <section id="resume" className={cls.resumeSection}>
+        <section id="resume" className="section">
             <h2 className={cls.heading}>Resume</h2>
 
             <div className={`${cls.block} ${cls.hero}`}>
