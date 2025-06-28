@@ -10,6 +10,6 @@ export const resumeData: IResumeData = {
         years: "2021 - 2025"
     }], 
 
-    skills: ["JavaScript", "TypeScript", "React", "React Router", "React Hooks", "Context API", "HTML", "CSS", "CSS Modules", "Git", "Vite", "Web Workers"]
+    skills: ["JavaScript", "TypeScript", "React", "React Router", "React Hooks", "Context API", "HTML", "CSS", "CSS Modules", "Jest", "Git", "Vite", "Web Workers"]
 
 }

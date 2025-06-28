@@ -1,0 +1,12 @@
+.carousel {
+    width: 98vw;
+    padding: 0 50px;
+    scroll-padding-left: 50px;
+    overscroll-behavior-x: contain;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+}
