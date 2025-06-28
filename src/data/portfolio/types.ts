@@ -1,6 +1,6 @@
 export interface IProject {
   id: string
-  type: "web-app" | "landing"
+  type: "Web App" | "Landing" | "Website"
   title: string
   description: string
   stack: string[]

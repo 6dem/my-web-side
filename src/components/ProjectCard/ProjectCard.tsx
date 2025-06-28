@@ -12,9 +12,8 @@ export function ProjectCard({project}: IProps) {
                 <img src={project.image} alt={project.title} className={cls.image} />
                 <div className={cls.content} >
                     <h3 className={cls.title}>{project.title}</h3>
-                    <p className={cls.type}>{project.type === "web-app" ? "Web App" : "Landing"}</p>
+                    <p className={cls.type}>{project.type}</p>
                     <p className={cls.description}>{project.description}</p>
-                    {/* <p className={cls.stack}>{project.stack.slice(0, 3).join(" ")}</p> */}
                     <p className={cls.stack}>{project.stack.join(" | ")}</p>
                     <div className={cls.links}>
                         {project.link && <a href={project.link} target="_blank" rel="noopener noreferrer" className={cls.link}>View Project</a>}
