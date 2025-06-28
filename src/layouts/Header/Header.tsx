@@ -73,13 +73,15 @@ export function Header(): JSX.Element {
 
     }
 
+    const itemRefs = useRef<(HTMLLIElement | null)[]>([])
+
     return <header className={cls.header}>
         <Emerald size={35}/>
         <h1 className={`${cls.title} ${cls.typing}`}>My Web Side</h1>
         <nav className={cls.navMenu}>
             <ul className={cls.navList}>
                 {navList.map(({id, label, icon: Icon}, i) => (
-                    <li key={id}>
+                    <li key={id} ref={el => {itemRefs.current[i] = el}}>
                         <a href={`#${id}`}
                         className={`${cls.navLink} ${active === i ? cls.active : ""}`}
                         onMouseEnter={() => setHover(i)}
@@ -87,6 +89,7 @@ export function Header(): JSX.Element {
                         onClick={() => {
                             setActive(i)
                             onLinkMouseDown()
+                            itemRefs.current[i]?.scrollIntoView({inline: "start"})
                         }}
                         >
                             <span className={cls.iconOnly} title={label}><Icon size={20} /></span>
