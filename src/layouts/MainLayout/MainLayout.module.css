@@ -36,3 +36,9 @@
     padding: 0 20px;
     min-height: 75dvh;
 }
+
+@media(min-width: 1111px) {
+    .headerBlur {
+        display: none;
+    }
+}

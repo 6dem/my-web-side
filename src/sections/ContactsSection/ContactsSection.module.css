@@ -1,3 +1,16 @@
+.contacts {
+    gap: 20px;
+}
+
+.contactsWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+    gap: 20px;
+}
+
 .contactsList {
     list-style: none;
     padding: 0;
@@ -10,6 +23,7 @@
 .contact {
     display: flex;
     align-items: center;
+    min-width: 280px;
     gap: 12px;
     font-size: 16px;
     line-height: 1.5;
