@@ -25,14 +25,14 @@ const handler: Handler = async (event) => {
         })
 
         await transporter.sendMail({
-            from: `"My Web Side" <${process.env.MAIL_USER}>`,
+            from: `"My Web Side" <${process.env.MAIL_TO}>`,
             to: process.env.MAIL_TO,
             subject: "New message from My Web Side",
             text: `From: ${name} <${email}>\n\n${message}`,
         })
 
         await transporter.sendMail({
-            from: `"Ablaev Edem" <${process.env.MAIL_USER}>`,
+            from: `"Ablaev Edem" <${process.env.MAIL_TO}>`,
             to: email,
             subject: "My Web Side | We received your message",
             text: `Hello ${name},\n\nThank you for contacting me! I have received your message and will get back to you soon.\n\n— Ablaev Edem`,
