@@ -6,11 +6,11 @@ export const projects: IProject[] = [
         type: "Web App",
         title: "FCircuit Simulator",
         description: "FCircuit Simulator is a web application for modeling, visualizing, and analyzing functional element circuits with delay.",
-        stack: ["JavaScript", "HTML", "CSS", "Konva", "Apache ECharts","Jest"],
+        stack: ["JavaScript", "HTML", "CSS", "Konva", "Apache ECharts", "Jest"],
         image: "/assets/fcircuit-sim.png",
         link: "https://6dem.github.io/fcircuit-sim/",
         repo: "https://github.com/6dem/fcircuit-sim",
-        date: "2025-05"
+        date: "2024-11"
     },
     {
         id: "2",
@@ -19,6 +19,7 @@ export const projects: IProject[] = [
         description: "React Cards is an educational web application for learning key React concepts and tools through interactive card work.",
         stack: ["React", "CSS Modules", "json-server", "JavaScript", "HTML", "CSS", "React Router", "React Toastify", "Vite"],
         image: "/assets/react-cards-app.png",
+        link: "https://react-cards-app-0gli.onrender.com",
         repo: "https://github.com/6dem/react-cards-app",
         date: "2025-05"
     },
