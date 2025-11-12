@@ -1,5 +1,6 @@
 import { SkillsCloud } from "@/components/SkillsCloud"
 import { resumeData } from "@/data/resume"
+import { getDisplayYear } from "@/utils/getDisplayYear"
 import type { JSX } from "react"
 import cls from './ResumeSection.module.css'
 
@@ -17,7 +18,7 @@ export function ResumeSection(): JSX.Element {
             <div className={`${cls.block} ${cls.hero}`}>
                 <div className={cls.mainInfo}>
                     <h3 className={cls.name}>Ablaev Edem</h3>
-                    <p className={cls.profession}>Frontend-developer</p>
+                    <p className={cls.profession}>{resumeData.specialization}</p>
                 </div>
                 <div className={cls.extraInfo}>
                     <p className={cls.age}><b>Age:</b> {age}</p>
@@ -34,31 +35,43 @@ export function ResumeSection(): JSX.Element {
                 </div>
             </div>
 
-            {resumeData.workExperience && resumeData.workExperience.length > 0 && (
+            {resumeData.workExperience?.length > 0 && (
                 <div className={cls.block}>
                     <h3 className={cls.subheading}>Work Experience</h3>
                     <ul>
-                    {resumeData.workExperience.map((item, i) => (
-                        <li key={i} className={cls.listItem}>
-                        <div className={cls.years}>{item.years}</div>
-                        {item.content}
-                        </li>
-                    ))}
+                        {resumeData.workExperience.map((item, i) => {
+                            const years = item.isCurrent
+                                ? getDisplayYear(parseInt(item.years), true)
+                                : item.years
+
+                            return (
+                                <li key={i} className={`${cls.listItem} ${item.isCurrent ? cls.currentListItem : ""}`}>
+                                    <div className={cls.years}>{years}</div>
+                                    <div>
+                                        <strong>{item.content}</strong>
+                                        {item.position && " — "}
+                                        {item.position}
+                                    </div>
+                                </li>
+                            )
+                        })}
                     </ul>
                 </div>
             )}
 
-            <div className={cls.block}>
-                <h3 className={cls.subheading}>Education</h3>
-                <ul className={cls.educationList}>
-                    {resumeData.education.map((item, i) => (
-                            <li key={i} className={cls.listItem}>
-                                <div className={cls.years}>{item.years}</div>
+            {resumeData.education?.length > 0 && (
+                <div className={cls.block}>
+                    <h3 className={cls.subheading}>Education</h3>
+                    <ul className={cls.educationList}>
+                        {resumeData.education.map((item, i) => (
+                            <li key={i} className={`${cls.listItem} ${item.isCurrent ? cls.currentListItem : ""}`}>
+                                <div className={cls.years}>{getDisplayYear(parseInt(item.years))}</div>
                                 {item.content}
                             </li>
-                    ))}
-                </ul>
-            </div>
+                        ))}
+                    </ul>
+                </div>
+            )}
 
             <div className={cls.block}>
                 <h3 className={cls.subheading}>Skills</h3>
