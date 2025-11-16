@@ -25,5 +25,3 @@ dist-ssr
 
 # Sensitive data
 .env
-# Local Netlify folder
-.netlify
