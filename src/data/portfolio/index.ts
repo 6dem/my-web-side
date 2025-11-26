@@ -2,6 +2,26 @@ import type { IProject } from "./types"
 
 export const projects: IProject[] = [
     {
+        id: "5",
+        type: "Website",
+        title: "Go \"KIRI\" School",
+        description: "A responsive website for the Go “KIRI” School, featuring an online enrollment form and server-side request handling. Integrated with an external Telegram bot (managed as a separate service) for processing submissions and notifying administrators in real time. Deployed through automated CI/CD pipelines using GitHub Actions.",
+        stack: ["Next", "SCSS Modules", "TypeScript", "Node.js", "API Integration", "Telegram Bot Integration", "Webpack", "CI/CD", "GitHub Actions"],
+        image: "/assets/kiri-go.png",
+        link: "https://kiri-go.ru",
+        date: "2025-09"
+    },
+    {
+        id: "6",
+        type: "TG Bot",
+        title: "KiriBot",
+        description: "A Telegram bot for the Go “KIRI” School that handles student enrollment, processes form submissions through an interactive flow, and sends structured applications to administrators. Includes developer debugging tools, group-invite generation, and automated deployment to a VDS via PM2 and GitHub Actions.",
+        stack: ["Telegraf", "Linux (VDS)", "Node.js", "PM2", "JavaScript", "API Integration", "Telegram Bot API", "CI/CD", "GitHub Actions"],
+        image: "/assets/kiri-bot.png",
+        link: "https://t.me/schoolgo_kiribot",
+        date: "2025-09"
+    },
+    {
         id: "1",
         type: "Web App",
         title: "FCircuit Simulator",
@@ -17,7 +37,7 @@ export const projects: IProject[] = [
         type: "Web App",
         title: "React Cards",
         description: "React Cards is an educational web application for learning key React concepts and tools through interactive card work.",
-        stack: ["React", "CSS Modules", "json-server", "JavaScript", "HTML", "CSS", "React Router", "React Toastify", "Vite"],
+        stack: ["React", "CSS Modules", "REST API", "JavaScript", "HTML", "CSS", "React Router", "React Toastify", "Vite"],
         image: "/assets/react-cards-app.png",
         link: "https://react-cards-app-0gli.onrender.com",
         repo: "https://github.com/6dem/react-cards-app",

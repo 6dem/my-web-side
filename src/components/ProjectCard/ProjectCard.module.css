@@ -35,13 +35,41 @@
     margin-bottom: 8px;
 }
 
-.description {
+.descriptionWrapper {
+    position: relative;
     max-height: 105px;
-    overflow: auto;
-    scrollbar-width: none;
-    font-size: 16px;
+    overflow: hidden;
+    /* важно */
     margin-bottom: 12px;
+    font-size: 16px;
 }
+
+/* Скролл внутри */
+.descriptionContent {
+    display: block;
+    max-height: 105px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding-right: 4px;
+    /* чтобы текст не упирался */
+}
+
+/* Градиент, который остаётся на месте */
+.scrollable::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 22px;
+
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            var(--dark-color) 100%);
+
+    pointer-events: none;
+}
+
 
 .stack {
     font-size: 14px;
