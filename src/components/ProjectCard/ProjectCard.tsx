@@ -23,14 +23,19 @@ export function ProjectCard({ project }: IProps) {
             <div className={cls.content}>
                 <h3 className={cls.title}>{project.title}</h3>
                 <p className={cls.type}>{project.type}</p>
-                <p
-                    ref={descRef}
-                    className={`${cls.descriptionWrapper} ${isScrollable ? cls.scrollable : ""}`}
-                >
-                    <span className={cls.descriptionContent}>
+
+                <div className={cls.descriptionWrapper}>
+                    <p
+                        ref={descRef}
+                        className={cls.description}
+                    >
                         {project.description}
-                    </span>
-                </p>
+                    </p>
+
+                    {isScrollable && <div className={cls.fadeBottom}></div>}
+                </div>
+
+
                 <p className={cls.stack}>{project.stack.join(" | ")}</p>
 
                 <div className={cls.links}>
