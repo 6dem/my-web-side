@@ -19,6 +19,34 @@
 
 .title {
     color: transparent;
+
+    &::after {
+        position: absolute;
+        content: "";
+        background-color: transparent;
+        right: -2px;
+        top: 0;
+        height: 1lh;
+        width: 1.5px;
+        animation: shrink-expand 1s ease-in-out infinite 6s;
+    }
+}
+
+@keyframes shrink-expand {
+    0% {
+        background-color: var(--dark-accent-color);
+        transform: scaleY(1);
+    }
+
+    50% {
+        background-color: var(--dark-accent-color);
+        transform: scaleY(0.01);
+    }
+
+    100% {
+        background-color: var(--dark-accent-color);
+        transform: scaleY(1);
+    }
 }
 
 .typing {
@@ -40,7 +68,7 @@
         typing-first 3s steps(10) forwards,
         deleting 1.2s steps(4) forwards 3s,
         typing-second 1.5s steps(5) forwards 4.3s,
-        blink-caret 0.75s step-end infinite 6s;
+        hide-caret 0s linear forwards 6s;
 }
 
 @keyframes typing-first {
@@ -77,15 +105,9 @@
 
 }
 
-@keyframes blink-caret {
-
-    from,
+@keyframes hide-caret {
     to {
         border-color: transparent;
-    }
-
-    50% {
-        border-color: var(--dark-accent-color);
     }
 }
 
@@ -113,11 +135,6 @@
     color: var(--text-color);
     font-weight: 500;
     text-decoration: none;
-    transition: color 0.3s ease;
-
-    &:hover {
-        color: var(--light-accent-color)
-    }
 }
 
 .iconOnly {
