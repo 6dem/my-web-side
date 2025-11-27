@@ -37,16 +37,17 @@
 
 .descriptionWrapper {
     position: relative;
-    max-height: 105px;
+    max-height: 120px;
     overflow: hidden;
     margin-bottom: 12px;
 }
 
 .description {
-    max-height: 105px;
+    max-height: 120px;
     overflow-y: auto;
     scrollbar-width: none;
     padding-right: 4px;
+    padding-bottom: 12px;
 }
 
 .fadeBottom {
