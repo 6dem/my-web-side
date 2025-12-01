@@ -28,7 +28,7 @@
         top: 0;
         height: 1lh;
         width: 1.5px;
-        animation: shrink-expand 1s ease-in-out infinite 6s;
+        animation: shrink-expand 1.2s ease-in-out infinite 6s;
     }
 }
 
@@ -38,9 +38,19 @@
         transform: scaleY(1);
     }
 
+    8% {
+        background-color: var(--dark-accent-color);
+        transform: scaleY(1);
+    }
+
     50% {
         background-color: var(--dark-accent-color);
         transform: scaleY(0.01);
+    }
+
+    92% {
+        background-color: var(--dark-accent-color);
+        transform: scaleY(1);
     }
 
     100% {
