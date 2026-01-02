@@ -4,9 +4,17 @@ import { getDisplayYear } from "@/utils/getDisplayYear"
 import type { JSX } from "react"
 import cls from './ResumeSection.module.css'
 
-const birthYear: number = 2004
-const currentYear: number = new Date().getFullYear()
-const age: number = currentYear - birthYear
+const birthDate = new Date(2004, 2, 17)
+const today = new Date()
+
+let age = today.getFullYear() - birthDate.getFullYear()
+
+const hasHadBirthdayThisYear =
+  today.getMonth() > birthDate.getMonth() ||
+  (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate())
+
+if (!hasHadBirthdayThisYear) age--
+
 const location: string = "Simferopol, Russia"
 
 export function ResumeSection(): JSX.Element {
