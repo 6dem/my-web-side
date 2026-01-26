@@ -73,7 +73,7 @@ export function ResumeSection(): JSX.Element {
                     <ul className={cls.educationList}>
                         {resumeData.education.map((item, i) => (
                             <li key={i} className={`${cls.listItem} ${item.isCurrent ? cls.currentListItem : ""}`}>
-                                <div className={cls.years}>{getDisplayYear(parseInt(item.years))}</div>
+                                <div className={cls.years}>{item.years}</div>
                                 {item.content}
                             </li>
                         ))}
