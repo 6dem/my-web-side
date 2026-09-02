@@ -1,4 +1,3 @@
-import { ContactForm } from "@/components/ContactForm"
 import { contacts } from "@/data/contacts"
 import cls from "./ContactsSection.module.css"
 
@@ -16,7 +15,6 @@ export function ContactsSection() {
                             </li>
                         ))}
                     </ul>
-                    <ContactForm />
                 </div>
             </section>
         </>
