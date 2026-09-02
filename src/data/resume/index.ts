@@ -1,9 +1,9 @@
 import type { IResumeData } from "./types"
 
 export const resumeData: IResumeData = {
-    specialization: "Software Engineer — Frontend & Process Automation",
+    specialization: "Software Engineer — AI & Process Automation",
 
-    about: "I am a Software Engineer with experience in building modern web applications using React and TypeScript, as well as automating technical processes with Python, Groovy, and SQL-based tools. This combination allows me to design end-to-end solutions, from user interfaces to data pipelines, process optimization, and integration of ML/GPT solutions. I enjoy turning complex problems into efficient, scalable solutions, managing internal technical processes, and continuously expanding my technical expertise. Feel free to explore my projects and experience below.",
+    about: "I am a Software Engineer focused on AI and process automation. I build and optimize technical processes using Python, Groovy, SQL, and internal tools, designing solutions from initial concept to production. My work includes developing end-to-end pipelines, integrating ML/GPT technologies into business processes, and building scalable, maintainable automation systems. I enjoy solving complex technical problems, improving existing processes, and turning repetitive or inefficient workflows into reliable automated solutions. I also have a background in frontend development with React and TypeScript, which gives me a broader perspective when designing end-to-end systems. Feel free to explore my projects and experience below.",
 
     workExperience: [
         {
@@ -26,6 +26,6 @@ export const resumeData: IResumeData = {
         isCurrent: false
     }],
 
-    skills: ["JavaScript", "TypeScript", "React", "React Router", "Context API", "HTML", "CSS", "CSS Modules", "Jest", "Git", "Vite", "Web Workers", "Next", "Webpack", "SQL", "Python", "Groovy"]
+    skills: ["Python", "Groovy", "SQL", "Git", "JavaScript", "TypeScript", "React", "React Router", "Context API", "HTML", "CSS", "CSS Modules", "Jest", "Vite", "Web Workers", "Next", "Webpack"]
 
 }
