@@ -8,7 +8,7 @@ export const resumeData: IResumeData = {
     workExperience: [
         {
             content: "Yandex",
-            position: "Technical Process Automation Specialist",
+            position: "Senior Technical Process Automation Specialist",
             years: "2025",
             isCurrent: true
         },
